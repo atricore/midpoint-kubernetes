@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mp-db
+  namespace: midpoint
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mp-db
+  template:
+    metadata:
+      labels:
+        app: mp-db
+    spec:
+      volumes:
+        - name: init-db
+          emptyDir: {}
+      initContainers:
+        - name: mp-db-init
+          image: 'evolveum/midpoint:4.8-support'
+          command: ["/bin/bash","/opt/midpoint/bin/midpoint.sh","init-native"]
+          env:
+            - name: MP_INIT_DB_CONCAT
+              value: /opt/db-init/010-init.sql
+          volumeMounts:
+            - name: init-db
+              mountPath: /opt/db-init
+          imagePullPolicy: IfNotPresent
+      containers:
+        - name: mp-db
+          image: 'postgres:13-alpine'
+          ports:
+            - name: db
+              containerPort: 5432
+              protocol: TCP
+          env:
+            - name: POSTGRES_INITDB_ARGS
+              value: '--lc-collate=en_US.utf8 --lc-ctype=en_US.utf8'
+            - name: POSTGRES_USER
+              value: midpoint
+            - name: POSTGRES_PASSWORD
+              value: SuperSecretPassword007
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          volumeMounts:
+            - name: init-db
+              mountPath: /docker-entrypoint-initdb.d/
+            - name: mp-pg-storage
+              mountPath: /var/lib/postgresql/data
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 10
+  serviceName: mp-db-service
+  volumeClaimTemplates:
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: mp-pg-storage
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
+        storageClassName: mp-storage
+        volumeMode: Filesystem

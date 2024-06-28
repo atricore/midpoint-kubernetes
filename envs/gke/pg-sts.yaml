@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mp-db
+  namespace: midpoint
+spec:
+  volumeClaimTemplates:
+    - kind: PersistentVolumeClaim
+      spec:
+        resources:
+          requests:
+            storage: 50Gi

@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mp-storage
+# Use rancher local-path to provide PersistentVoulume support
+provisioner: rancher.io/local-path # This is the provisioner ID
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete
+
