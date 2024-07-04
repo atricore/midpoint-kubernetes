@@ -44,6 +44,8 @@ data:
                         <t:value>
                             <name>A3C - Midpoint (K8S)</name>
                             <headerColor>green</headerColor>
+                            <partnerName>atricore</partnerName>
+                            <partnerUrl>https://www.atricore.com</partnerUrl>
                             <systemName>K8s</systemName>
                         </t:value>
                     </s:itemDelta>
