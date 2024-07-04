@@ -5,9 +5,6 @@ kind: Kustomization
 namespace: midpoint
 
 resources:
-  - mp-ns.yaml
-  - config/mp.yaml
+  #  - mp-ns.yaml
   - secrets/pg-pw.yaml
-  - midponit/repository
-  - midponit/repository
   - midponit/server

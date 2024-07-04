@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mp-server-svc
+  labels:
+    app: mp-server
+spec:
+  type: ClusterIP
+  selector:
+    app: mp-server
+  ports:
+    - name: mp
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+  # If you choose to expose your application using a Service, you must create a regional IP address. Global IP addresses only work with Ingress resource type
+  # loadBalancerIP: "10.200.0.104"
+
