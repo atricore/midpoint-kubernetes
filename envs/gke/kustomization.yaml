@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - mp-storage-class.yaml
+  - https-loadbalancer.yaml
+  - ingress-ssl-cert.yaml
   - ../../base/
-
-patches:
-  - path: pg-sts.yaml

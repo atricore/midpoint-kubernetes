@@ -1,0 +1,16 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: mp-managed-cert
+spec:
+  domains:
+    - midpoint.atricore.com
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: mp-dashboard-frontend
+spec:
+  sslPolicy: mp-dashboard-ssl-policy
+  redirectToHttps:
+    enabled: true

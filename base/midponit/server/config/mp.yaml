@@ -2,7 +2,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mp-config
-  namespace: midpoint
 data:
   111-sysconf-deployment.xml: >
     <?xml version="1.0" encoding="UTF-8"?>
@@ -43,7 +42,7 @@ data:
                         <t:modificationType>add</t:modificationType>
                         <t:path>deploymentInformation</t:path>
                         <t:value>
-                            <name>Midpoint (Kubernetes)</name>
+                            <name>A3C - Midpoint (K8S)</name>
                             <headerColor>green</headerColor>
                             <systemName>K8s</systemName>
                         </t:value>
