@@ -8,6 +8,6 @@ resources:
   - mp-ns.yaml
   - config/mp.yaml
   - secrets/pg-pw.yaml
-  - midponit/repository/pg-sts.yaml
-  - midponit/repository/pg-svc.yaml
-  - midponit/server/mp-sts.yaml
+  - midponit/repository
+  - midponit/repository
+  - midponit/server

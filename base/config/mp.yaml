@@ -43,7 +43,7 @@ data:
                         <t:modificationType>add</t:modificationType>
                         <t:path>deploymentInformation</t:path>
                         <t:value>
-                            <name>Midpoint (Kubernetes)</name>
+                            <name>A3C - Midpoint (K8S)</name>
                             <headerColor>green</headerColor>
                             <systemName>K8s</systemName>
                         </t:value>
