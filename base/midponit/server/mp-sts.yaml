@@ -57,6 +57,8 @@ spec:
               value: "1"
             - name: MP_NO_ENV_COMPAT
               value: "1"
+            - name: JAVA_OPTS
+              value: "-Djavax.net.ssl.trustStore=/usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts -Djavax.net.ssl.trustStoreType=pkcs12"
           volumeMounts:
             - name: mp-home
               mountPath: /opt/midpoint/var
