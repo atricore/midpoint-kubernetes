@@ -11,6 +11,6 @@ kind: FrontendConfig
 metadata:
   name: mp-dashboard-frontend
 spec:
-  sslPolicy: mp-dashboard-ssl-policy
+  sslPolicy: ssl-policy-security
   redirectToHttps:
     enabled: true
