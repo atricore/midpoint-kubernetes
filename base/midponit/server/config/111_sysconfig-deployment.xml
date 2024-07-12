@@ -20,11 +20,11 @@
                     <t:modificationType>add</t:modificationType>
                     <t:path>deploymentInformation</t:path>
                     <t:value>
-                        <headerColor>green</headerColor>
-                        <name>DITO - IAM (TESTE)</name>
-                        <description>DITO IAM environment in Atricore labs!</description>
-                        <skin>skin-green-light</skin>
-                        <customerName>DITO</customerName>
+                        <headerColor>purple</headerColor>
+                        <name>Midpoint (Atricore - K8S)</name>
+                        <description>IAM environment in Atricore labs (kubernetes)!</description>
+                        <skin>skin-purple-light</skin>
+                        <customerName>Atricore</customerName>
                         <partnerName>Atricore</partnerName>
                         <systemName>midpoint</systemName>
                     </t:value>
