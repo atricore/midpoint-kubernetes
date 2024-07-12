@@ -21,8 +21,10 @@ spec:
             secretName: mp-db
             defaultMode: 420
         - name: mp-poi
-          configMap:
-            name: mp-config
+          projected:
+            sources:
+            - configMap:
+                name: mp-config
             defaultMode: 420
       initContainers:
         - name: mp-config-init
