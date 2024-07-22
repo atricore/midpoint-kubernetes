@@ -4,12 +4,14 @@ metadata:
   name: mp-server-svc
   labels:
     app: mp-server
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {"80": "mp-beconfig"}}'
+    cloud.google.com/app-protocols: '{"http-dashboard-ports":"HTTP"}'
 spec:
   type: ClusterIP
   selector:
     app: mp-server
   ports:
     - name: http-dashboard-ports
-      port: 80
+      port: 80 
       targetPort: 8080
-      protocol: TCP

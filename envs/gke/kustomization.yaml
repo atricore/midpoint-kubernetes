@@ -7,3 +7,6 @@ resources:
   - ingress-ssl-cert.yaml
   - mp-backend-config.yaml
   - ../../base/
+
+patches:
+  - path: mp-svc.yaml

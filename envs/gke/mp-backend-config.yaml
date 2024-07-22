@@ -1,14 +1,13 @@
 apiVersion: cloud.google.com/v1
 kind: BackendConfig
 metadata:
-  name: midpoint-beconfig
+  name: mp-beconfig
 spec:
+  timeoutSec: 30
   healthCheck:
     checkIntervalSec: 120
     timeoutSec: 15
     healthyThreshold: 1
     unhealthyThreshold: 2
-    type: HTTPS
-    requestPath: "/midpoint"
-    
-
+    type: HTTP
+    requestPath: "/midpoint/actuator/health"

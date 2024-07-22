@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: mp-static-ip
     networking.gke.io/managed-certificates: mp-managed-cert
     kubernetes.io/ingress.class: "gce"
-    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.allow-http: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     networking.gke.io/v1beta1.FrontendConfig: "mp-dashboard-frontend"
 spec:
@@ -14,4 +14,4 @@ spec:
     service:
       name: mp-server-svc
       port:
-        number: 8080
+        number: 80
