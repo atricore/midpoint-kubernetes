@@ -5,4 +5,5 @@ resources:
   - mp-storage-class.yaml
   - https-loadbalancer.yaml
   - ingress-ssl-cert.yaml
+  - mp-backend-config.yaml
   - ../../base/
