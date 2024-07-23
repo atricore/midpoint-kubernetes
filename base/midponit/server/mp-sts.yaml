@@ -66,6 +66,7 @@ spec:
               mountPath: /opt/midpoint/var
             - name: db-pass
               mountPath: /opt/midpoint/config-secrets
+              readOly: true
             - name: mp-poi
               mountPath: /opt/midpoint-dirs-docker-entrypoint/post-initial-objects
             - name: mp-poi-storage
