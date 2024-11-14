@@ -28,7 +28,7 @@ spec:
             defaultMode: 420
       initContainers:
         - name: mp-config-init
-          image: 'evolveum/midpoint:4.8-support'
+          image: 'evolveum/midpoint:4.9-support'
           command: ["/bin/bash","/opt/midpoint/bin/midpoint.sh","init-native"]
           env:
             - name: MP_INIT_CFG
@@ -39,7 +39,7 @@ spec:
           imagePullPolicy: IfNotPresent
       containers:
         - name: mp-server
-          image: 'evolveum/midpoint:4.8-support'
+          image: 'evolveum/midpoint:4.9-support'
           ports:
             - name: gui
               containerPort: 8080
